@@ -33,10 +33,10 @@ FetchContent_Declare(teaserpp URL https://github.com/MIT-SPARK/TEASER-plusplus/a
 FetchContent_GetProperties(teaserpp)
 if(NOT teaserpp_POPULATED)
   FetchContent_Populate(teaserpp)
-  if(${CMAKE_VERSION} GREATER_EQUAL 3.25)
+  if(${CMAKE_VERSION} GREATER_EQUAL 3.5)
     add_subdirectory(${teaserpp_SOURCE_DIR} ${teaserpp_BINARY_DIR} SYSTEM EXCLUDE_FROM_ALL)
   else()
-    # Emulate the SYSTEM flag introduced in CMake 3.25. Withouth this flag the compiler will
+    # Emulate the SYSTEM flag introduced in CMake 3.5. Withouth this flag the compiler will
     # consider this 3rdparty headers as source code and fail due the -Werror flag.
     add_subdirectory(${teaserpp_SOURCE_DIR} ${teaserpp_BINARY_DIR} EXCLUDE_FROM_ALL)
     get_target_property(teaserpp_include_dirs teaserpp INTERFACE_INCLUDE_DIRECTORIES)

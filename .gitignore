@@ -228,3 +228,7 @@ cython_debug/
 
 # End of https://www.toptal.com/developers/gitignore/api/python
 nn
+
+kiss_matcher_venv/
+ROBIN/
+python/_deps/

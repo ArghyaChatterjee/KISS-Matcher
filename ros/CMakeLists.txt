@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.24)
+cmake_minimum_required(VERSION 3.5...4.0)
 project(kiss_matcher_ros)
 
 # Set a default build type if none is specified
@@ -24,7 +24,7 @@ if(EXISTS ${CMAKE_CURRENT_SOURCE_DIR}/../cpp/kiss_matcher/ AND NOT IS_SYMLINK ${
   add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/../cpp/kiss_matcher ${CMAKE_CURRENT_BINARY_DIR}/kiss_matcher)
 else()
   #This is what kiss_icp does.
-    #cmake_minimum_required(VERSION 3.18)
+    #cmake_minimum_required(VERSION 3.5...4.0)
     #message(STATUS "Performing out-of-tree build, fetching KISS-Matcher v${CMAKE_PROJECT_VERSION} Release from Github")
     #include(FetchContent)
     #FetchContent_Declare(

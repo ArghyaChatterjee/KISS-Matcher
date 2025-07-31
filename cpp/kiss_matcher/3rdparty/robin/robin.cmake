@@ -28,11 +28,11 @@ include(FetchContent)
 FetchContent_Declare(robin URL https://github.com/MIT-SPARK/ROBIN/archive/refs/tags/v.1.2.4.tar.gz)
 FetchContent_GetProperties(robin)
 if(NOT robin)
-  FetchContent_Populate(robin)
-  if(${CMAKE_VERSION} GREATER_EQUAL 3.25)
+  FetchContent_MakeAvailable(robin)
+  if(${CMAKE_VERSION} GREATER_EQUAL 3.5)
     add_subdirectory(${robin_SOURCE_DIR} ${robin_BINARY_DIR} SYSTEM EXCLUDE_FROM_ALL)
   else()
-    # Emulate the SYSTEM flag introduced in CMake 3.25. Withouth this flag the compiler will
+    # Emulate the SYSTEM flag introduced in CMake 3.5. Withouth this flag the compiler will
     # consider this 3rdparty headers as source code and fail due the -Werror flag.
     add_subdirectory(${robin_SOURCE_DIR} ${robin_BINARY_DIR} EXCLUDE_FROM_ALL)
     get_target_property(robin_include_dirs robin INTERFACE_INCLUDE_DIRECTORIES)

@@ -1,4 +1,5 @@
-cmake_minimum_required(VERSION 3.10)
+cmake_minimum_required(VERSION 3.5...4.0)
+
 project(kiss_matcher_example)
 
 # Set a default build type if none is specified
